@@ -937,7 +937,7 @@ static const luaL_Reg functions[] = {
 
 __attribute__((visibility ("default"))) int luaopen_flu(lua_State *L)
 {
-#if LUA_VERSION_NUM==502 || LUA_VERSION_NUM==503
+#if LUA_VERSION_NUM==502 || LUA_VERSION_NUM==503 || LUA_VERSION_NUM==504
 	lua_newtable(L);    // table flu
 #elif LUA_VERSION_NUM==501
 	{
@@ -959,7 +959,7 @@ __attribute__((visibility ("default"))) int luaopen_flu(lua_State *L)
 	push_errno_table(L);
 	lua_setfield(L, -2, "errno");   // flu.errno = errno table created in push_errno_table
 
-#if LUA_VERSION_NUM==502 || LUA_VERSION_NUM==503
+#if LUA_VERSION_NUM==502 || LUA_VERSION_NUM==503 || LUA_VERSION_NUM==504
 	return 1;
 #else
 	return 0;

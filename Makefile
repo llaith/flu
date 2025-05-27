@@ -1,7 +1,7 @@
 # FUSE version. You can compile for different FUSE versions. Supported
 # versions are: 25, 26.
 FUSE_VERSION=31
-LUA_VERSION=5.3
+LUA_VERSION=5.4
 
 PREFIX?=/usr
 INSTALL_BIN=$(PREFIX)/lib/lua/$(LUA_VERSION)
