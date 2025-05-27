@@ -1,7 +1,7 @@
 # FUSE version. You can compile for different FUSE versions. Supported
 # versions are: 25, 26.
 FUSE_VERSION=31
-LUA_VERSION=5.3
+LUA_VERSION=5.4
 
 PREFIX?=/usr
 INSTALL_BIN=$(PREFIX)/lib/lua/$(LUA_VERSION)
@@ -12,7 +12,7 @@ LDFLAGS+=-fvisibility=hidden -Wl,-rpath,.
 
 build: flu.so
 
-flu.so: CPPFLAGS+=-DFUSE_USE_VERSION=$(FUSE_VERSION)
+flu.so: CPPFLAGS+=-DFUSE_USE_VERSION=$(FUSE_VERSION) -DLUA_VERSION_NUM=504
 # flu.so: LDLIBS+=-lfuse
 flu.so: LDLIBS+= lib/libfuse3.so
 flu.so: errno.o posix_structs.o compat.o
