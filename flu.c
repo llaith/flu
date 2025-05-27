@@ -886,7 +886,7 @@ static int lua__main(lua_State *L)
  */
         switch(i) {
             case 1:
-                lua_pushstring(L,"Invalid option arguments.);
+                lua_pushstring(L,"Invalid option arguments.");
                 break;
             case 2:
                 lua_pushstring(L,"No mount point specified.");
@@ -908,6 +908,7 @@ static int lua__main(lua_State *L)
                 break;
             default:
                 lua_pushstring(L,"Unknown Error.");
+                break;
         }
         return 2;
     }
